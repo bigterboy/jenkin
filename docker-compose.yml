@@ -1,0 +1,10 @@
+services:
+  jenkins:
+    image: jenkins/jenkins
+    container_name: jenkins
+    ports:
+      - "8080:8080"  # Jenkins web interface
+      - "50000:50000"  # Jenkins slave agents
+    volumes:
+      - ./jenkins_home:/var/jenkins_home  # Persistent data storage
+    restart: always  # Restart policy
